@@ -1,7 +1,7 @@
-import { DataService } from './../shared/data.service';
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from "../shared/http.service";
-import { Song } from "../shared/artist.interface";
+import {DataService} from './../shared/data.service';
+import {Component, OnInit} from '@angular/core';
+import {HttpService} from "../shared/http.service";
+import {Song} from "../shared/artist.interface";
 
 @Component({
   selector: 'app-items-table',
@@ -12,7 +12,9 @@ export class ItemsTableComponent implements OnInit {
   songs: Song[];
   favSongs: Song[];
   sorted: boolean = false;
-  constructor(private httpService: HttpService, private dataService: DataService) { }
+
+  constructor(private httpService: HttpService, private dataService: DataService) {
+  }
 
   ngOnInit() {
     this.favSongs = this.dataService.getFavoriteSongs();

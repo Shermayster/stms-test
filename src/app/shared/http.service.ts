@@ -11,7 +11,7 @@ export class HttpService {
   private headers = new Headers({ 'X-Mashape-Key': 'AuzTGXGvAKmshQmnlmsZ3w19VIeFp158HQQjsn4nqmXDanOLNE'});
   getQuote(search: string) {
     return this.http.get('https://deezerdevs-deezer.p.mashape.com/search?q='+search, {headers: this.headers})
-      .map((r: Response) => r.json().data);
+      .map((r: Response) => r.json().data)
   }
 
 

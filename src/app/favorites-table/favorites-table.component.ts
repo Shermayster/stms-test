@@ -15,7 +15,4 @@ export class FavoritesTableComponent implements OnInit {
     this.songs = this.dataService.getFavoriteSongs();
   }
 
-updateSong(song: Song) {
- this.dataService.updateSong(song);
-}
 }
