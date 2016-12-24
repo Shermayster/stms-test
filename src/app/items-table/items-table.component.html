@@ -1,0 +1,47 @@
+<div class="card card-block">
+  <h1 *ngIf="!songs">Loading</h1>
+<div class="row" *ngIf="songs">
+
+</div>
+  <h3 class="card-title">Choose Artist and Add Song to Favorites</h3>
+<div class="table-headers">
+<select (change)="getSongsFromApi($event.target.value)" >
+  <option value="Depeche Mode">Depeche Mode</option>
+  <option value="U2">U2</option>
+  <option value="Muse">Muse</option>
+  <option value="Radiohead">Radiohead</option>
+</select>
+<a routerLink="/favorites" class="btn btn-primary">Go To Favorites</a>
+</div>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+         <th>Add to Favorites</th>
+        <th>Song Name
+          <button class="btn btn-primary sort-button"  *ngIf="!sorted" (click)='sortSongs()'>Sort</button>
+          <button class="btn btn-primary sort-button" *ngIf="sorted" (click)='sortSongs()'>Reverce Sort</button>
+          </th>
+        <th>Artist</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of songs; let i = index;">
+        <th scope="row">{{i+1}}</th>
+           <td>
+          <input type="checkbox" [id]="'song'+i"
+          [(ngModel)]="song.inFavorite"
+          (change)="$event.target.checked? addSongToFavorite(song): deleteSongFromFavorite(song)">
+           <label [for]="'song'+i" *ngIf="!song.inFavorite">Add Song</label>
+          <label [for]="'song'+i" *ngIf="song.inFavorite">Remove Song</label>
+        </td>
+        <td>{{song.title}}</td>
+        <td>{{song.artist.name | uppercase}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+

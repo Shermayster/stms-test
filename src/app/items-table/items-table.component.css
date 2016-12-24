@@ -1,0 +1,7 @@
+.table-headers > select, .table-headers > button {
+  margin: 1rem;
+}
+.sort-button {
+    padding: 0 .5rem;
+    margin: 0 .5rem;
+}

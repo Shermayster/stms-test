@@ -1,0 +1,22 @@
+<div class="card card-block">
+<h3 *ngIf="songs.length === 0">Please Add More Songs to Favorite</h3>
+<a routerLink="" class="btn btn-primary">Go To Song List</a>
+<table *ngIf="songs.length > 0" class="table table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Song name</th>
+    <th>Artist</th>
+    <th>Add Comment</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let song of songs; let i = index;">
+    <th scope="row">{{i+1}}</th>
+    <td>{{song.title}}</td>
+    <td>{{song.artist.name}}</td>
+    <td><input type="text"  [(ngModel)]='song.comment'>
+  </tr>
+  </tbody>
+</table>
+</div>
