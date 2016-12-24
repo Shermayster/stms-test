@@ -1,10 +1,10 @@
-import { STMSTestPage } from './app.po';
+import { StmsTestPage } from './app.po';
 
 describe('stms-test App', function() {
-  let page: STMSTestPage;
+  let page: StmsTestPage;
 
   beforeEach(() => {
-    page = new STMSTestPage();
+    page = new StmsTestPage();
   });
 
   it('should display message saying app works', () => {

@@ -1,4 +1,4 @@
-import { SortPipe } from './shared/sort.pipe';
+
 import { DataService } from './shared/data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,8 +14,7 @@ import {HttpService} from "./shared/http.service";
   declarations: [
     AppComponent,
     ItemsTableComponent,
-    FavoritesTableComponent,
-    SortPipe
+    FavoritesTableComponent
   ],
   imports: [
     BrowserModule,

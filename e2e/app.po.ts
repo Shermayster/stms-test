@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class STMSTestPage {
+export class StmsTestPage {
   navigateTo() {
     return browser.get('/');
   }
